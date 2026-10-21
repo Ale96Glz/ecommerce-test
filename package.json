@@ -1,0 +1,26 @@
+{
+  "name": "sdet",
+  "version": "1.0.0",
+  "description": "Pruebas de caja negra del gateway ecommerce",
+  "scripts": {
+    "test:smoke": "playwright test --grep @smoke",
+    "test:e2e": "playwright test --grep @e2e",
+    "test:security": "playwright test --grep @security"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ale96Glz/ecommerce-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ale96Glz/ecommerce-test/issues"
+  },
+  "homepage": "https://github.com/Ale96Glz/ecommerce-test#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5"
+  }
+}
