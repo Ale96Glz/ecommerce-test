@@ -71,7 +71,7 @@ Cada push comprueba el TypeScript. El humo corre solo si hay un `BASE_URL` real.
 
 ## 5. Reglas de un caso
 
-- Un comportamiento por test. Tag en el título: `@smoke` o `@security`.
+- Un comportamiento por test. El tag va en la opción `tag` de Playwright (`@smoke`, `@security`), no en el título.
 - Email `sdet-<epoch>-<aleatorio>@ecommerce.test`. Sin estado compartido entre tests.
 - Se afirma estado y forma del JSON. En el 401 del gateway: `status`, `error`, `message`. En el login: `token` y `rol`.
 - El código HTTP se confirma en la `1.2.2` antes de dejarlo fijo.
