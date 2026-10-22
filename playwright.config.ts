@@ -9,6 +9,7 @@ export default defineConfig({
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL: process.env.BASE_URL ?? 'http://localhost:8080',
+    ignoreHTTPSErrors: true,
   },
   projects: [{ name: 'api' }],
 });
