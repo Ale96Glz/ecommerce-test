@@ -6,13 +6,11 @@ test.describe('pedidos', () => {
       throw new Error(`No se pudo conectar al gateway en ${baseURL}. ${error.message}`);
     });
 
-    const body = await response.text();
-    const context = `GET ${response.url()} → ${response.status()}\n${body}`;
-    const json = JSON.parse(body);
+    expect(response.status(), 'El pedido no respondió 401.').toBe(401);
+    expect(response.headers()['content-type']).toMatch(/application\/json/);
 
-    expect(response.status(), `El pedido no respondió 401.\n${context}`).toBe(401);
-    expect(response.headers()['content-type'], context).toMatch(/application\/json/);
-    expect(json, context).toMatchObject({
+    const json = await response.json();
+    expect(json).toMatchObject({
       status: 401,
       error: 'Unauthorized',
       message: 'Falta el header Authorization Bearer',

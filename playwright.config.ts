@@ -6,7 +6,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: 1,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [['list'], ['html', { open: 'never' }], ['./tests/reporters/resumen.ts']],
   use: {
     baseURL: process.env.BASE_URL ?? 'http://localhost:8080',
     ignoreHTTPSErrors: true,
